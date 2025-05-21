@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { selectAllBooks } from "../redux/bookSlice";
 import CategoryList from "../components/CategoryList";
 import BookCard from "../components/BookCard";
+import { BASE_PATH } from '../utils/constants';
 
 const Home = () => {
   const books = useSelector(selectAllBooks);
@@ -15,7 +16,7 @@ const Home = () => {
         <div className="hero-overlay">
           <h1>Welcome to Online Library</h1>
           <p style={{ color: "black" }}>Dive into curated collections, timeless classics, and hidden gems — all in one digital library.</p>
-          <Link to="/browse" className="browse-btn">
+          <Link to={`${BASE_PATH}/browse`} className="browse-btn">
             Browse All Books
           </Link>
         </div>
@@ -32,7 +33,7 @@ const Home = () => {
             <BookCard key={book.id} book={book} />
           ))}
         </div>
-        <Link to="/browse" className="view-more-btn">
+        <Link to={`${BASE_PATH}/browse`} className="view-more-btn">
           View More Books
         </Link>
       </section>

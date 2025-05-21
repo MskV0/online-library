@@ -1,5 +1,7 @@
 // src/components/Navbar.jsx
 import { Link } from 'react-router-dom';
+import { BASE_PATH } from '../utils/constants';
+
 
 const Navbar = () => {
   return (
@@ -10,13 +12,13 @@ const Navbar = () => {
       </div>
       <ul className="navbar-links">
         <li>
-          <Link to="/">Home</Link>
+          <Link to={`${BASE_PATH}/`} className="home-link">Home</Link>
         </li>
         <li>
-          <Link to="/browse">Browse Books</Link>
+          <Link to={`${BASE_PATH}/browse`} className="browse-link">Browse Books</Link>
         </li>
         <li>
-          <Link to="/add">Add Book</Link>
+          <Link to={`${BASE_PATH}/add`} className="add-link">Add Book</Link>
         </li>
       </ul>
     </nav>

@@ -1,5 +1,6 @@
 // src/components/BookCard.jsx
 import { Link } from 'react-router-dom';
+import { BASE_PATH } from '../utils/constants';
 
 const BookCard = ({ book }) => {
   return (
@@ -13,7 +14,7 @@ const BookCard = ({ book }) => {
         <p>by {book.author}</p>
         <p className="book-rating">Rating: {book.rating} / 5</p>
         <p className="book-category">Category: {book.category}</p>
-        <Link to={`/book/${book.id}`} className="view-details-btn">
+        <Link to={`/${BASE_PATH}/book/${book.id}`} className="view-details-btn">
           View Details
         </Link>
       </div>
