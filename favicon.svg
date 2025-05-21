@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bookGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a6da7"/>
+      <stop offset="100%" stop-color="#2c4a7a"/>
+    </linearGradient>
+    <linearGradient id="bookGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e05252"/>
+      <stop offset="100%" stop-color="#a52c2c"/>
+    </linearGradient>
+    <linearGradient id="bookGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#51af5b"/>
+      <stop offset="100%" stop-color="#2c7a3a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#f9f9f9" stroke="#e0e0e0" stroke-width="1"/>
+  
+  <!-- Books -->
+  <rect x="14" y="15" width="8" height="34" rx="1" ry="1" fill="url(#bookGradient1)" transform="skewX(-10)"/>
+  <rect x="24" y="15" width="10" height="34" rx="1" ry="1" fill="url(#bookGradient2)" transform="skewX(-5)"/>
+  <rect x="36" y="15" width="8" height="34" rx="1" ry="1" fill="url(#bookGradient3)" transform="skewX(5)"/>
+  
+  <!-- Book details -->
+  <rect x="16" y="20" width="4" height="1" fill="white" opacity="0.5" transform="skewX(-10)"/>
+  <rect x="16" y="23" width="4" height="1" fill="white" opacity="0.5" transform="skewX(-10)"/>
+  <rect x="26" y="20" width="6" height="1" fill="white" opacity="0.5" transform="skewX(-5)"/>
+  <rect x="26" y="23" width="6" height="1" fill="white" opacity="0.5" transform="skewX(-5)"/>
+  <rect x="38" y="20" width="4" height="1" fill="white" opacity="0.5" transform="skewX(5)"/>
+  <rect x="38" y="23" width="4" height="1" fill="white" opacity="0.5" transform="skewX(5)"/>
+</svg>
