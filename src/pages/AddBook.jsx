@@ -39,28 +39,29 @@ const AddBook = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Validate form
-    const validationErrors = validateBookForm(formData);
+  // Validate form
+  const validationErrors = validateBookForm(formData);
 
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
 
-    // Convert rating to number
-    const bookData = {
-      ...formData,
-      rating: parseFloat(formData.rating),
-    };
-
-    // Dispatch add book action
-    dispatch(addBook(bookData));
-
-    // Redirect to browse page
-    navigate("/browse");
+  // Convert rating to number
+  const bookData = {
+    ...formData,
+    rating: parseFloat(formData.rating),
   };
+
+  // Dispatch to Redux
+  dispatch(addBook(bookData));
+
+  
+  navigate("/browse");
+};
+
  
   
   const handleBlur = (e) => {

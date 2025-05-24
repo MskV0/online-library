@@ -1,10 +1,12 @@
-// src/redux/bookSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 import { booksData } from '../data/books';
 
+// 🆕 Load from localStorage, or use booksData as fallback
+const storedBooks = JSON.parse(localStorage.getItem('books')) || booksData;
+
 const initialState = {
-  books: booksData,
-  filteredBooks: booksData,
+  books: storedBooks,
+  filteredBooks: storedBooks,
   searchTerm: '',
 };
 
@@ -18,8 +20,12 @@ export const bookSlice = createSlice({
         id: state.books.length + 1,
       };
       state.books.push(newBook);
-      state.filteredBooks = state.books; // Reset filtered books to include the new book
+      state.filteredBooks = state.books;
+
+      // 🆕 Save to localStorage
+      localStorage.setItem('books', JSON.stringify(state.books));
     },
+
     filterByCategory: (state, action) => {
       const category = action.payload;
       if (category === 'All') {
@@ -28,6 +34,7 @@ export const bookSlice = createSlice({
         state.filteredBooks = state.books.filter(book => book.category === category);
       }
     },
+
     searchBooks: (state, action) => {
       state.searchTerm = action.payload;
       const searchTerm = action.payload.toLowerCase();
